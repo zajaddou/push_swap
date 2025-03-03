@@ -6,11 +6,11 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 20:57:15 by zajaddou          #+#    #+#             */
-/*   Updated: 2025/02/26 11:10:01 by zajaddou         ###   ########.fr       */
+/*   Updated: 2025/02/26 11:08:20 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
 int	ft_atoi(const char *str)
 {
@@ -28,15 +28,17 @@ int	ft_atoi(const char *str)
 			sign = -1;
 		str++;
 	}
+	if (*str < '0' || *str > '9')
+		ft_exit(1);
 	while (*str >= '0' && *str <= '9')
 	{
 		before = result;
 		result = result * 10 + (*str - '0');
-		if (result / 10 != before && sign == 1)
-			return (-1);
-		if (result / 10 != before && sign == -1)
-			return (0);
 		str++;
 	}
+	if (*str)
+		ft_exit(1);
+	if ((result * sign) < INT_MIN || (result * sign) > INT_MAX)
+			ft_exit(1);
 	return ((result * sign));
 }

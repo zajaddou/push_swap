@@ -1,17 +1,7 @@
 
 #include "push_swap.h"
 
-void sort_3(t_stack **stack, int size, char c)
-{
-	if ((*stack)->index == (size - 1))
-		rotate(stack, c);
-	else if ((*stack)->index < (*stack)->next->index)
-		reverse_rotate(stack, c);
-	if ((*stack)->index > (*stack)->next->index)
-		swap(stack, c);
-}
-
-int get_index(t_stack **stack, int i)
+static int get_index(t_stack **stack, int i)
 {
     t_stack *tmp;
     int     pos;
@@ -26,6 +16,12 @@ int get_index(t_stack **stack, int i)
         pos++;
     }
     return (pos);
+}
+
+static void sort_b(t_stack **stack_b)
+{
+	if ((*stack_b)->index < (*stack_b)->next->index)
+		swap(stack_b, 'b');
 }
 
 void sort_5(t_stack **stack_a, t_stack **stack_b, char c)
@@ -52,4 +48,5 @@ void sort_5(t_stack **stack_a, t_stack **stack_b, char c)
             reverse_rotate(stack_a, c);
         push(stack_a, stack_b);
     }
+    sort_b(stack_b);
 }

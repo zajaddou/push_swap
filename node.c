@@ -5,7 +5,7 @@ void index_node(t_stack **stack_a)
 {
     t_stack *temp;
     t_stack *min;
-    int		i;
+    unsigned int i;
 
 	i = 0;
     while (1)

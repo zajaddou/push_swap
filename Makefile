@@ -32,6 +32,7 @@ fclean: clean
 push: fclean
 	@git add .
 	@git commit -m "update"
-	git push
+	@git push
+	@clear
 
 re: fclean all LIBFT

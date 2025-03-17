@@ -18,13 +18,11 @@ int main(int ac, char *av[])
 	index_node(&stack_a);
 
 	if (size == 3)
-		sort_3(&stack_a, size, 'a');
-	if (size == 5)
-		sort_5(&stack_a, &stack_b, size, 'a');
-
+		sort_3(&stack_a, 'a');
+	else if (size == 5)
+		sort_5(&stack_a, &stack_b, 'a');
+	else
+		ft_exit("Cant sort");
 	print_node(stack_a, 'A');
 	print_node(stack_b, 'B');
 }
-
-// If the first element isn’t the largest,
-// check if the second element is. Compare their index. 

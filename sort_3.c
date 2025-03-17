@@ -1,11 +1,27 @@
 
 #include "push_swap.h"
 
-void sort_3(t_stack **stack, int size, char c)
+static int max_index(t_stack **stack)
 {
-	if ((*stack)->index == (size - 1))
+    t_stack *tmp;
+    int     max;
+
+    max = 0;
+    tmp = *stack;
+    while (tmp)
+    {
+        if (tmp->index > max)
+            max = tmp->index;
+        tmp = tmp->next;
+    }
+    return (max);
+}
+
+void sort_3(t_stack **stack, char c)
+{
+	if ((*stack)->index == max_index(stack))
 		rotate(stack, c);
-	else if ((*stack)->index < (*stack)->next->index)
+	if ((*stack)->index < (*stack)->next->index)
 		reverse_rotate(stack, c);
 	if ((*stack)->index > (*stack)->next->index)
 		swap(stack, c);

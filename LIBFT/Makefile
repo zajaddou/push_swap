@@ -6,7 +6,7 @@
 #    By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/13 05:03:47 by zajaddou          #+#    #+#              #
-#    Updated: 2025/03/17 06:41:58 by zajaddou         ###   ########.fr        #
+#    Updated: 2025/03/17 07:36:12 by zajaddou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,13 +57,13 @@ $(NAME): $(OBJS)
 	ar r $@ $^
 
 %.o: %.c libft.h
-	@$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@rm -f $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 

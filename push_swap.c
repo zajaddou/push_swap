@@ -15,12 +15,18 @@ int main(int ac, char *av[])
 	parsing(ac, av, &size, &stack_a);
 
 	index_node(&stack_a);
-	print_node(stack_a, 'A');
 
-	reverse(&stack_a);
-
+	if (size == 3)
+	{
+		if (stack_a->index == (size - 1))
+			rotate(&stack_a, 'a');
+		else if (stack_a->index < stack_a->next->index)
+			reverse(&stack_a, 'a');
+		if ((stack_a->index > stack_a->next->index))
+			swap(&stack_a, 'a');
+	}
 	print_node(stack_a, 'A');
 }
 
-
-// If the index of the first element equals the maximum index, perform a RA: move the first element to the last position..
+// If the first element isn’t the largest,
+// check if the second element is. Compare their index. 

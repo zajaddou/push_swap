@@ -4,10 +4,12 @@
 // sa : swap a - swap the first 2 elements at the top of stack a.
 // pa : push a - take the first element at the top of b and put it at the top of a.
 
-void swap(t_stack **stack)
+void swap(t_stack **stack, char c)
 {
     t_stack *first;
     t_stack *second;
+
+    printf("s%c\n", c);
 
     if (!stack || !(*stack) || !(*stack)->next)
         return;
@@ -34,10 +36,12 @@ void push(t_stack **src, t_stack **dest)
     *dest = temp;
 }
 
-void rotate(t_stack **stack)
+void rotate(t_stack **stack, char c)
 {
     t_stack *first;
     t_stack *last;
+
+    printf("r%c\n", c);
 
     if (!stack || !(*stack) || !(*stack)->next)
         return;
@@ -53,10 +57,12 @@ void rotate(t_stack **stack)
     first->next = NULL;
 }
 
-void reverse(t_stack **stack)
+void reverse(t_stack **stack, char c)
 {
     t_stack *last;
     t_stack *second_last;
+
+    printf("rr%c\n", c);
 
     if (!stack || !(*stack) || !(*stack)->next)
         return ;

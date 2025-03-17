@@ -30,6 +30,6 @@ void     print_node(t_stack *stack_a, int c);
 void     push(t_stack **src, t_stack **dest);
 void     swap(t_stack **stack, char c);
 void     rotate(t_stack **stack, char c);
-void     reverse(t_stack **stack, char c);
+void     reverse_rotate(t_stack **stack, char c);
 
 #endif

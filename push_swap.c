@@ -21,7 +21,7 @@ int main(int ac, char *av[])
 		if (stack_a->index == (size - 1))
 			rotate(&stack_a, 'a');
 		else if (stack_a->index < stack_a->next->index)
-			reverse(&stack_a, 'a');
+			reverse_rotate(&stack_a, 'a');
 		if ((stack_a->index > stack_a->next->index))
 			swap(&stack_a, 'a');
 	}

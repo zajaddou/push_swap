@@ -57,7 +57,7 @@ void rotate(t_stack **stack, char c)
     first->next = NULL;
 }
 
-void reverse(t_stack **stack, char c)
+void reverse_rotate(t_stack **stack, char c)
 {
     t_stack *last;
     t_stack *second_last;

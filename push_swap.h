@@ -20,7 +20,7 @@ void     ft_free(void *ptr);
 void     *ft_malloc(size_t size);
 void     ft_exit(char *why);
 int      extra_atoi(const char *str);
-int      *parsing(int ac, char **av, int *size);
+void     parsing(int ac, char **av, int *size, t_stack **stack_a);
 
 int      stack_size(t_stack *stack);
 void     add_node(t_stack **real, int data);

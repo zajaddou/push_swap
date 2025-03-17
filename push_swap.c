@@ -12,14 +12,15 @@ int main(int ac, char *av[])
 	t_stack *stack_a = NULL;
 
 	int size = 0;
-	int i	= -1;
-
-	int *list = parsing(ac, av, &size);
-	
-	while (++i < size)
-		add_node(&stack_a, list[i]);
+	parsing(ac, av, &size, &stack_a);
 
 	index_node(&stack_a);
+	print_node(stack_a, 'A');
+
 	reverse(&stack_a);
+
 	print_node(stack_a, 'A');
 }
+
+
+// If the index of the first element equals the maximum index, perform a RA: move the first element to the last position..

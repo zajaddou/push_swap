@@ -153,10 +153,11 @@ static int *create_list(int size, char *input)
     return (list);
 }
 
-int *parsing(int ac, char **av, int *size)
+void parsing(int ac, char **av, int *size, t_stack **stack_a)
 {
 	char	*input;
 	int		*list;
+	int		i;
 
 	if (ac == 1)
 		ft_exit(NULL);
@@ -168,5 +169,7 @@ int *parsing(int ac, char **av, int *size)
 		ft_exit("Duplicate input");
 	if (is_sorted(list, *size))
 		ft_exit(NULL);
-	return (list); 
+	i = -1;
+	while (++i < *size)
+		add_node(stack_a, list[i]);
 }

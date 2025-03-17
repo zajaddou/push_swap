@@ -18,7 +18,15 @@ static int get_index(t_stack **stack, int i)
     return (pos);
 }
 
-void sort_5(t_stack **stack_a, t_stack **stack_b, char c)
+static void sort_b(t_stack **stack_a, t_stack **stack_b)
+{
+	if ((*stack_b)->index < (*stack_b)->next->index)
+		swap(stack_b, 'b');
+    push(stack_b, stack_a, 'b');
+    push(stack_b, stack_a, 'b');
+}
+
+void sort_5(t_stack **stack_a, t_stack **stack_b, int size, char c)
 {
     int i = -1;
 
@@ -40,6 +48,8 @@ void sort_5(t_stack **stack_a, t_stack **stack_b, char c)
         }
         else if (pos == 4)
             reverse_rotate(stack_a, c);
-        push(stack_a, stack_b);
+        push(stack_a, stack_b, 'a');
     }
+    sort_3(stack_a, size, 'a');
+    sort_b(stack_a, stack_b);
 }

@@ -27,12 +27,12 @@ void     add_node(t_stack **real, int data);
 void     index_node(t_stack **stack_a);
 void     print_node(t_stack *stack_a, int c);
 
-void     push(t_stack **src, t_stack **dest);
+void     push(t_stack **src, t_stack **dest, char c);
 void     swap(t_stack **stack, char c);
 void     rotate(t_stack **stack, char c);
 void     reverse_rotate(t_stack **stack, char c);
 
 void     sort_3(t_stack **stack, int size, char c);
-void     sort_5(t_stack **stack_a, t_stack **stack_b ,char c);
+void     sort_5(t_stack **stack_a, t_stack **stack_b, int size, char c);
 
 #endif

@@ -22,7 +22,7 @@ void swap(t_stack **stack, char c)
     *stack = second;
 }
 
-void push(t_stack **src, t_stack **dest)
+void push(t_stack **src, t_stack **dest, char c)
 {
     t_stack *temp;
 
@@ -34,6 +34,7 @@ void push(t_stack **src, t_stack **dest)
 
     temp->next = *dest;
     *dest = temp;
+    printf("p%c\n", c);
 }
 
 void rotate(t_stack **stack, char c)

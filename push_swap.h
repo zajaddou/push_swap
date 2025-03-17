@@ -26,7 +26,10 @@ int      stack_size(t_stack *stack);
 void     add_node(t_stack **real, int data);
 void     index_node(t_stack **stack_a);
 void     print_node(t_stack *stack_a, int c);
+
 void     push(t_stack **src, t_stack **dest);
 void     swap(t_stack **stack);
+void     rotate(t_stack **stack);
+void     reverse(t_stack **stack);
 
 #endif

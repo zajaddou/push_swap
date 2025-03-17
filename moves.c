@@ -33,3 +33,41 @@ void push(t_stack **src, t_stack **dest)
     temp->next = *dest;
     *dest = temp;
 }
+
+void rotate(t_stack **stack)
+{
+    t_stack *first;
+    t_stack *last;
+
+    if (!stack || !(*stack) || !(*stack)->next)
+        return;
+
+    first = *stack;
+    *stack = first->next;
+    last = *stack;
+
+    while (last->next)
+        last = last->next;
+
+    last->next = first;
+    first->next = NULL;
+}
+
+void reverse(t_stack **stack)
+{
+    t_stack *last;
+    t_stack *second_last;
+
+    if (!stack || !(*stack) || !(*stack)->next)
+        return ;
+
+    second_last = *stack;
+    
+    while (second_last->next->next)
+        second_last = second_last->next;
+
+    last = second_last->next;
+    second_last->next = NULL;
+    last->next = *stack;
+    *stack = last;
+}

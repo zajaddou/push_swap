@@ -1,60 +1,29 @@
-#include "LIBFT/libft.h"
+
 #include "push_swap.h"
 
-void struct_print(t_push *ptr)
+void leak()
 {
-    while (ptr->next != NULL)
-    {
-        printf("%d\n", ptr->data);
-        ptr = ptr->next;
-    }
-}
-
-void    multi_args(char *av[], t_push **ptr, int i)
-{
-    printf("multi args : \n");
-    t_push  *tmp;
-
-    tmp = *ptr;
-    while (av[i])
-    {
-        tmp->data = ft_atoi(av[i]);
-        printf("%d\n", ft_atoi(av[i]));
-        i++;
-    }
-}
-
-void    one_arg(char *arg, t_push **ptr)
-{
-    printf("one_arg : \n");
-    t_push  *tmp;
-    int     i;
-    char    **list;
-
-    i = 0;
-    tmp = *ptr;
-    list = ft_split(arg, ' ');
-
-    while (list[i] != NULL)
-    {
-        tmp->data = ft_atoi(list[i]);
-        printf("%d\n", ft_atoi(list[i]));
-        i++;
-    }
+	system("leaks push_swap");
 }
 
 int main(int ac, char *av[])
 {
-    t_push  *ptr;
+	//atexit(leak);
+	t_stack *stack_a = NULL;
+	t_stack *stack_b = NULL;
 
-    ptr = ft_malloc(sizeof(t_push));
-    if (ac < 2)
-        return (0);
-    if (ac > 2)
-        multi_args(av, &ptr, 1);
-    else if (ac == 2)
-        one_arg(av[1], &ptr);
+	int size = 0;
+	int i	= -1;
 
-    
-    return (0);
+	int *list = parsing(ac, av, &size);
+	
+	while (++i < size)
+		add_node(&stack_a, list[i]);
+
+	index_node(&stack_a);
+
+	push(&stack_a, &stack_b);
+	print_node(stack_a, 'A');
+	printf("\n");
+	print_node(stack_b, 'B');
 }

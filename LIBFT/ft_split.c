@@ -6,7 +6,7 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 07:42:03 by zajaddou          #+#    #+#             */
-/*   Updated: 2024/11/18 07:50:18 by zajaddou         ###   ########.fr       */
+/*   Updated: 2025/03/15 21:04:58 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 static char	**free_array(char **dest, int i)
 {
 	while (i > 0)
-	{
-		i--;
-		free(dest[i]);
-	}
+		free(dest[--i]);
 	free(dest);
 	return (0);
 }

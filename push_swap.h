@@ -32,4 +32,7 @@ void     swap(t_stack **stack, char c);
 void     rotate(t_stack **stack, char c);
 void     reverse_rotate(t_stack **stack, char c);
 
+void sort_three(t_stack **stack, int size, char c);
+
+
 #endif

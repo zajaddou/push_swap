@@ -24,13 +24,3 @@ int main(int ac, char *av[])
 
 // If the first element isn’t the largest,
 // check if the second element is. Compare their index. 
-
-void sort_three(t_stack **stack, int size, char c)
-{
-	if ((*stack)->index == (size - 1))
-		rotate(stack, c);
-	else if ((*stack)->index < (*stack)->next->index)
-		reverse_rotate(stack, c);
-	if ((*stack)->index > (*stack)->next->index)
-		swap(stack, c);
-}

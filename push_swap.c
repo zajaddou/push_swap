@@ -17,35 +17,20 @@ int main(int ac, char *av[])
 	index_node(&stack_a);
 
 	if (size == 3)
-	{
-		if (stack_a->index == (size - 1))
-			rotate(&stack_a, 'a');
-		else if (stack_a->index < stack_a->next->index)
-			reverse_rotate(&stack_a, 'a');
-		if ((stack_a->index > stack_a->next->index))
-			swap(&stack_a, 'a');
-	}
-	if (size == 3)
-	{
-		if (stack_a->index == (size - 1))
-			rotate(&stack_a, 'a');
-		else if (stack_a->index < stack_a->next->index)
-			reverse_rotate(&stack_a, 'a');
-		if ((stack_a->index > stack_a->next->index))
-			swap(&stack_a, 'a');
-	}
+		sort_three(&stack_a, size, 'a');
+
 	print_node(stack_a, 'A');
 }
 
 // If the first element isn’t the largest,
 // check if the second element is. Compare their index. 
 
-void sort_three(t_stack **stack, int size)
+void sort_three(t_stack **stack, int size, char c)
 {
 	if ((*stack)->index == (size - 1))
-		rotate(stack);
+		rotate(stack, c);
 	else if ((*stack)->index < (*stack)->next->index)
-		reverse_rotate(stack);
+		reverse_rotate(stack, c);
 	if ((*stack)->index > (*stack)->next->index)
-		swap(stack);
+		swap(stack, c);
 }

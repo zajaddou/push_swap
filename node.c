@@ -34,7 +34,8 @@ void print_node(t_stack *stack_a, int c)
 {
 	t_stack *temp = stack_a;
 
-	printf("Stack %c :", c);
+	if (temp)
+        printf("\nStack %c :", c);
 	while (temp)
 	{
 		printf("\n%d | %d ", temp->index , temp->data);

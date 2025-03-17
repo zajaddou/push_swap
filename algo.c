@@ -16,8 +16,8 @@ int get_index(t_stack **stack, int i)
     t_stack *tmp;
     int     pos;
 
-    tmp = *stack;
     pos = 0;
+    tmp = *stack;
     while (tmp)
     {
         if (tmp->index == i)
@@ -53,5 +53,3 @@ void sort_5(t_stack **stack_a, t_stack **stack_b, char c)
         push(stack_a, stack_b);
     }
 }
-
-

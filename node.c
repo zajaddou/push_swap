@@ -35,7 +35,7 @@ void print_node(t_stack *stack_a, int c)
 	t_stack *temp = stack_a;
 
 	if (temp)
-        printf("\nStack %c :", c);
+        printf("\n> %c <", c);
 	while (temp)
 	{
 		printf("\n%d | %d ", temp->index , temp->data);

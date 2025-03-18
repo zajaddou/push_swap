@@ -49,7 +49,6 @@ void sort_5(t_stack **stack_a, t_stack **stack_b, char c)
         else if (pos == 4)
             reverse_rotate(stack_a, c);
         push(stack_a, stack_b, 'a');
-
     }
     sort_3(stack_a, 'a');
     sort_b(stack_a, stack_b);

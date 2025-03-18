@@ -30,7 +30,7 @@ void index_node(t_stack **stack_a)
     }
 }
 
-void print_node(t_stack *stack_a, int c)
+void print_node(t_stack *stack_a, char c)
 {
 	t_stack *temp = stack_a;
 

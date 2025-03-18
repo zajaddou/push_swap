@@ -25,7 +25,7 @@ void     parsing(int ac, char **av, int *size, t_stack **stack_a);
 int      stack_size(t_stack *stack);
 void     add_node(t_stack **real, int data);
 void     index_node(t_stack **stack_a);
-void     print_node(t_stack *stack_a, int c);
+void     print_node(t_stack *stack_a, char c);
 
 void     push(t_stack **src, t_stack **dest, char c);
 void     swap(t_stack **stack, char c);

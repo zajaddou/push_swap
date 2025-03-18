@@ -39,7 +39,6 @@ int    extra_atoi(const char *str)
     return (number * sign);
 }
 
-
 void    *ft_malloc(size_t size)
 {
 	void *ptr;

@@ -12,8 +12,7 @@ NUM=5
 
 STOP=0
 
-generate_random_numbers()
-{
+generate_random_numbers() {
     nums=()
     while [ "${#nums[@]}" -lt "$NUM" ]; do
         rand=$((RANDOM % (MAX - MIN + 1) + MIN))
@@ -21,6 +20,7 @@ generate_random_numbers()
             nums+=("$rand")
         fi
     done
+    # Reshuffle if the numbers are already sorted
     while [ "$(echo "${nums[@]}" | tr ' ' '\n' | sort -n | tr '\n' ' ')" == "$(echo "${nums[@]}" | tr ' ' '\n' | tr '\n' ' ')" ]; do
         nums=($(echo "${nums[@]}" | tr ' ' '\n' | sort -R | tr '\n' ' '))
     done
@@ -28,12 +28,16 @@ generate_random_numbers()
 }
 
 for ((i=0; i<TESTS; i++)); do
-    clear
+    if [ "$STOP" -eq 1 ]; then
+        clear
+    fi
+
     INPUT=$(generate_random_numbers)
     
     OUTPUT=$(./push_swap $INPUT)
     
-    FINAL_A=$(echo "$OUTPUT" | grep -A $NUM "> A <" | tail -n $NUM | awk '{print $3}' | tr '\n' ' ' | tr -s ' ' | sed 's/ *$//')
+    # Extract only the stack A numbers:
+    FINAL_A=$(echo "$OUTPUT" | awk '/> A </ {flag=1; next} /^</ {flag=0} flag {print $3}' | tr '\n' ' ' | tr -s ' ' | sed 's/ *$//')
     
     EXPECTED=$(echo "$INPUT" | tr ' ' '\n' | sort -n | tr '\n' ' ' | sed 's/ *$//')
     
@@ -42,14 +46,16 @@ for ((i=0; i<TESTS; i++)); do
     fi
 
     if [ "$FINAL_A" == "$EXPECTED" ]; then
-        echo "[ ✅ ]"
+        echo " ✅ "
     else
-        echo "  ❌ "
+        clear
+        echo " ❌ "
         STOP=1
     fi
-    echo "  -> : $INPUT"
-    echo "  <- : $FINAL_A"
+    echo " -> : $INPUT"
+    echo " <- : $FINAL_A"
     echo ""
+    
     if [ "$STOP" -eq 1 ]; then
         break
     fi

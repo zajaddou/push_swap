@@ -6,6 +6,8 @@
 #include <limits.h>
 #include "LIBFT/libft.h"
 
+#define print_moves 1
+
 #ifndef PUSH_SWAP
 #define PUSH_SWAP
 

@@ -12,7 +12,8 @@ void swap(t_stack **stack, char c)
     if (!stack || !(*stack) || !(*stack)->next)
         return;
 
-    printf("s%c\n", c);
+    if (print_moves)
+        printf("s%c\n", c);
 
     first = *stack;
     second = first->next;
@@ -29,7 +30,8 @@ void push(t_stack **src, t_stack **dest, char c)
     if (!src || !(*src)) 
         return;
 
-    printf("p%c\n", c);
+    if (print_moves)
+        printf("p%c\n", c);
 
     temp = *src;
     *src = (*src)->next;
@@ -46,7 +48,8 @@ void rotate(t_stack **stack, char c)
     if (!stack || !(*stack) || !(*stack)->next)
         return;
 
-    printf("r%c\n", c);
+    if (print_moves)
+        printf("r%c\n", c);
 
     first = *stack;
     *stack = first->next;
@@ -67,7 +70,8 @@ void reverse_rotate(t_stack **stack, char c)
     if (!stack || !(*stack) || !(*stack)->next)
         return ;
 
-    printf("rr%c\n", c);
+    if (print_moves)
+        printf("rr%c\n", c);
 
     second_last = *stack;
     

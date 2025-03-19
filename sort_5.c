@@ -47,6 +47,6 @@ void sort_5(t_stack **stack_a, t_stack **stack_b)
     sort_3(stack_a, 'a');
 	if ((*stack_b)->index < (*stack_b)->next->index)
 		swap(stack_b, 'b');
-    push(stack_b, stack_a, 'a');
-    push(stack_b, stack_a, 'a');
+    //push(stack_b, stack_a, 'a');
+    //push(stack_b, stack_a, 'a');
 }

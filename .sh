@@ -8,7 +8,7 @@ MIN=0
 MAX=100
 
 # Number of arguments
-NUM=5
+NUM=4
 
 STOP=0
 

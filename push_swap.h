@@ -13,9 +13,9 @@
 
 typedef struct stack
 {
-   int    data;
-   int    index;
-   struct stack *next;
+	int    data;
+	int    index;
+	struct stack *next;
 } t_stack;
 
 void     ft_free(void *ptr);

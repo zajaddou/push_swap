@@ -17,8 +17,6 @@ int	main(int ac, char *av[])
 		sort_4_5(&stack_a, &stack_b);
 	else if (size > 5)
 		big_sort(&stack_a, &stack_b);
-	else
-		ft_exit("Cant sort");
 
 	print_node(stack_a);
 	print_node(stack_b);

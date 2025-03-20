@@ -8,7 +8,7 @@ static int	long_result64(int sign)
 	return (0);
 }
 
-int	extra_atoi(const char *str)
+int		extra_atoi(const char *str)
 {
 	int		i;
 	int		sign;
@@ -62,12 +62,24 @@ void    ft_free(void *ptr)
 		total[++in] = ptr;
 }
 
+void	error(char *err)
+{
+	while (*err)
+	{
+		write(2, err, 1);
+		err++;
+	}
+}
+
 void    ft_exit(char *why)
 {
 	ft_free(NULL);
 	if (why)
 	{
-		printf("\033[1;31mE: %s\033[0m\n", why);
+		error("\033[1;31m");
+		error("E: ");
+		error(why);
+		error("\033[0m\n");
 		exit(1);
 	}
 	exit(0);

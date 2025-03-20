@@ -1,14 +1,8 @@
 
 #include "push_swap.h"
 
-void leak()
+int	main(int ac, char *av[])
 {
-	system("leaks push_swap");
-}
-
-int main(int ac, char *av[])
-{
-	//atexit(leak);
 	t_stack *stack_a = NULL;
 	t_stack *stack_b = NULL;
 

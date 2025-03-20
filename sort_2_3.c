@@ -1,7 +1,7 @@
 
 #include "push_swap.h"
 
-void sort_2_3(t_stack **stack)
+void	sort_2_3(t_stack **stack)
 {
 	int		n1;
 	int		n2;

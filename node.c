@@ -1,7 +1,7 @@
 
 #include "push_swap.h"
 
-void index_node(t_stack **stack_a)
+void	index_node(t_stack **stack_a)
 {
 	t_stack *temp;
 	t_stack *min;
@@ -30,7 +30,7 @@ void index_node(t_stack **stack_a)
 	}
 }
 
-void print_node(t_stack *stack)
+void	print_node(t_stack *stack)
 {
 	t_stack *temp = stack;
 
@@ -44,7 +44,7 @@ void print_node(t_stack *stack)
 	printf("\n");
 }
 
-int stack_size(t_stack *stack)
+int		stack_size(t_stack *stack)
 {
 	t_stack     *temp;
 	unsigned int size;
@@ -59,7 +59,7 @@ int stack_size(t_stack *stack)
 	return (size);
 }
 
-void add_node(t_stack **real, int data)
+void	add_node(t_stack **real, int data)
 {
 	t_stack *temp;
 	t_stack *new;

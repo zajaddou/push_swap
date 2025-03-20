@@ -1,7 +1,7 @@
 
 #include "push_swap.h"
 
-static int	is_empty(char *str)
+static	int	is_empty(char *str)
 {
 	int	i;
 
@@ -12,7 +12,7 @@ static int	is_empty(char *str)
 	return (1);
 }
 
-static int is_valid(char *str)
+static	int is_valid(char *str)
 {
 	if (is_empty(str))
 		return (0);
@@ -41,14 +41,14 @@ static int is_valid(char *str)
 	return (1);
 }
 
-static void check_args(char *av[])
+static	void check_args(char *av[])
 {
 	while (*(++av))
 		if (!is_valid(*av))
 			ft_exit("Invalid Args");
 }
 
-static int	count_word(char const *s)
+static	int	count_word(char const *s)
 {
 	int	c_words;
 	int	i;
@@ -69,7 +69,7 @@ static int	count_word(char const *s)
 	return (c_words);
 }
 
-static char *combine_args(int ac, char **av)
+static	char *combine_args(int ac, char **av)
 {
 	char	*input;
 	char	*temp;
@@ -98,7 +98,7 @@ static char *combine_args(int ac, char **av)
 	return (input);
 }
 
-static int is_duplicate(int *list, int size)
+static	int is_duplicate(int *list, int size)
 {
     int		a;
 	int		b;
@@ -118,7 +118,7 @@ static int is_duplicate(int *list, int size)
     return (0);
 }
 
-static int is_sorted(int *list, int size)
+static	int is_sorted(int *list, int size)
 {
     int a = 0;
 
@@ -131,7 +131,7 @@ static int is_sorted(int *list, int size)
     return (1);
 }
 
-static int *create_list(int size, char *input)
+static	int	*create_list(int size, char *input)
 {
 	int		*list;
 	char	**split;
@@ -153,7 +153,7 @@ static int *create_list(int size, char *input)
     return (list);
 }
 
-void parsing(int ac, char **av, int *size, t_stack **stack_a)
+void	parsing(int ac, char **av, int *size, t_stack **stack_a)
 {
 	char	*input;
 	int		*list;

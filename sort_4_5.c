@@ -53,7 +53,7 @@ static void push_small(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-void sort_4_5(t_stack **stack_a, t_stack **stack_b)
+void	sort_4_5(t_stack **stack_a, t_stack **stack_b)
 {
 	push_small(stack_a, stack_b);
 	push_small(stack_a, stack_b);

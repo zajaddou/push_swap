@@ -30,12 +30,12 @@ void index_node(t_stack **stack_a)
 	}
 }
 
-void print_node(t_stack *stack_a, char c)
+void print_node(t_stack *stack)
 {
-	t_stack *temp = stack_a;
+	t_stack *temp = stack;
 
 	if (temp)
-		printf("\n> %c <", c);
+		printf("\n> %c <", stack->place);
 	while (temp)
 	{
 		printf("\n%d | %d ", temp->index , temp->data);
@@ -68,6 +68,7 @@ void add_node(t_stack **real, int data)
 	{
 		*real = ft_malloc(sizeof(t_stack));
 		(*real)->data = data;
+		(*real)->place = 'a';
 		(*real)->index = -1;
 		(*real)->next = NULL;
 	}
@@ -75,6 +76,7 @@ void add_node(t_stack **real, int data)
 		temp = *real;
 		new = ft_malloc(sizeof(t_stack));
 		new->data = data;
+		new->place = 'a';
 		new->index = -1;
 		new->next = NULL;
 

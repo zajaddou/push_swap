@@ -1,7 +1,7 @@
 
 #include "push_swap.h"
 
-void sort_2_3(t_stack **stack, char c)
+void sort_2_3(t_stack **stack)
 {
 	int		n1;
 	int		n2;
@@ -14,10 +14,10 @@ void sort_2_3(t_stack **stack, char c)
 		n3 = (*stack)->next->next->index;
 
 		if (n1 > n2 && n1 > n3)
-			rotate(stack, c);
+			rotate(stack);
 		else if (n2 > n1 && n2 > n3)
-			reverse_rotate(stack, c);
+			reverse_rotate(stack);
 	}
 	if ((*stack)->index > (*stack)->next->index)
-		swap(stack, c);
+		swap(stack);
 }

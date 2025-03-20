@@ -18,7 +18,7 @@ int main(int ac, char *av[])
 	index_node(&stack_a);
 
 	if (size == 2 || size == 3)
-		sort_2_3(&stack_a, 'a');
+		sort_2_3(&stack_a);
 	else if (size == 4 || size == 5)
 		sort_4_5(&stack_a, &stack_b);
 	else if (size > 5)
@@ -26,6 +26,6 @@ int main(int ac, char *av[])
 	else
 		ft_exit("Cant sort");
 
-	print_node(stack_a, 'A');
-	print_node(stack_b, 'B');
+	print_node(stack_a);
+	print_node(stack_b);
 }

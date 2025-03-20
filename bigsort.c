@@ -12,15 +12,15 @@ void	big_sort(t_stack **stack_a, t_stack **stack_b)
 	{
 		if ((*stack_a)->index <= i)
 		{
-			push(stack_a, stack_b, 'b');
+			push(stack_a, stack_b);
 			i++;
 		}
 		else if ((*stack_a)->index <= i + range)
 		{
-			push(stack_a, stack_b, 'b');
-			rotate(stack_b, 'b');
+			push(stack_a, stack_b);
+			rotate(stack_b);
 		}
 		else
-			rotate(stack_a, 'a');
+			rotate(stack_a);
 	}
 }

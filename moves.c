@@ -4,7 +4,7 @@
 // sa : swap a - swap the first 2 elements at the top of stack a.
 // pa : push a - take the first element at the top of b and put it at the top of a.
 
-void swap(t_stack **stack, char c)
+void swap(t_stack **stack)
 {
 	t_stack *first;
 	t_stack *second;
@@ -13,7 +13,7 @@ void swap(t_stack **stack, char c)
 		return;
 
 	if (print_moves)
-		printf("s%c\n", c);
+		printf("s%c\n", (*stack)->place);
 
 	first = *stack;
 	second = first->next;
@@ -23,24 +23,27 @@ void swap(t_stack **stack, char c)
 	*stack = second;
 }
 
-void push(t_stack **src, t_stack **dest, char c)
+void push(t_stack **src, t_stack **dest)
 {
 	t_stack *temp;
+	char 	to;
 
 	if (!src || !(*src)) 
 		return;
-
+	if ((*src)->place == 'a')
+		to = 'b';
+	else
+		to = 'a';
 	if (print_moves)
-		printf("p%c\n", c);
-
+		printf("p%c\n", to);
 	temp = *src;
 	*src = (*src)->next;
-
 	temp->next = *dest;
+	temp->place = to;
 	*dest = temp;
 }
 
-void rotate(t_stack **stack, char c)
+void rotate(t_stack **stack)
 {
 	t_stack *first;
 	t_stack *last;
@@ -49,7 +52,7 @@ void rotate(t_stack **stack, char c)
 		return;
 
 	if (print_moves)
-		printf("r%c\n", c);
+		printf("r%c\n", (*stack)->place);
 
 	first = *stack;
 	*stack = first->next;
@@ -62,7 +65,7 @@ void rotate(t_stack **stack, char c)
 	first->next = NULL;
 }
 
-void reverse_rotate(t_stack **stack, char c)
+void reverse_rotate(t_stack **stack)
 {
 	t_stack *last;
 	t_stack *second_last;
@@ -71,7 +74,7 @@ void reverse_rotate(t_stack **stack, char c)
 		return ;
 
 	if (print_moves)
-		printf("rr%c\n", c);
+		printf("rr%c\n", (*stack)->place);
 
 	second_last = *stack;
 	

@@ -17,8 +17,8 @@ int main(int ac, char *av[])
 
 	index_node(&stack_a);
 
-	if (size == 3)
-		sort_3(&stack_a, 'a');
+	if (size == 2 || size == 3)
+		sort_2_3(&stack_a, 'a');
 	else if (size == 4 || size == 5)
 		sort_4_5(&stack_a, &stack_b);
 	else if (size > 5)

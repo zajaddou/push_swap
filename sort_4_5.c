@@ -48,7 +48,7 @@ void sort_4_5(t_stack **stack_a, t_stack **stack_b)
 {
     push_index(stack_a, stack_b, 0);
     push_index(stack_a, stack_b, 1);
-    sort_3(stack_a, 'a');
+    sort_2_3(stack_a, 'a');
     push(stack_b, stack_a, 'a');
     if (stack_size(*stack_b) == 1)
         push(stack_b, stack_a, 'a');

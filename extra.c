@@ -1,7 +1,7 @@
 
 #include "push_swap.h"
 
-static int	long_number64(int sign)
+static int	long_result64(int sign)
 {
 	if (sign == 1)
 		return (-1);
@@ -12,31 +12,29 @@ int	extra_atoi(const char *str)
 {
 	int		i;
 	int		sign;
-	long	number;
+	long	result;
 
 	i = 0;
-	number = 0;
 	sign = 1;
-	while (str[i] == '\n' || str[i] == '\f' || str[i] == '\t'
-		|| str[i] == ' ' || str[i] == '\v' || str[i] == '\r')
+	result = 0;
+	while (*str && ((*str >= 9 && *str <= 13) || (*str == 32)))
 		i++;
-	if (str[i] == '-')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		sign = -1;
+		if (str[i] == '-')
+			sign = -1;
 		i++;
 	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
 	{
-		if (number > (LONG_MAX - (str[i] - '0')) / 10)
-			return (long_number64(sign));
-		number = (number * 10) + (str[i] - '0');
-		if ((number * sign) > 2147483647 || (number * sign) < -2147483648)
+		if (result > (LONG_MAX - (str[i] - '0')) / 10)
+			return (long_result64(sign));
+		result = (result * 10) + (str[i] - '0');
+		if ((result * sign) > INT_MAX || (result * sign) < INT_MIN)
 			ft_exit("Out of range");
 		i++;
 	}
-	return (number * sign);
+	return (result * sign);
 }
 
 void    *ft_malloc(size_t size)

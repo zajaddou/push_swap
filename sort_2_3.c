@@ -3,9 +3,9 @@
 
 void sort_2_3(t_stack **stack, char c)
 {
-	int n1;
-	int n2;
-	int n3;
+	int		n1;
+	int		n2;
+	int		n3;
 
 	if (stack_size(*stack) == 3)
 	{

@@ -1,22 +1,31 @@
 
 #include "push_swap.h"
 
-static int get_index(t_stack **stack, int i)
+static int small_index(t_stack *stack)
 {
-	t_stack *tmp;
-	int     pos;
+    t_stack *tmp;
+    int		min_i;
+	int		min_p;
+    int		pos;
 
 	pos = 0;
-	tmp = *stack;
-	while (tmp && (tmp->index != i))
-	{
-		tmp = tmp->next;
-		pos++;
-	}
-	return (pos);
+	min_p = 0;
+	tmp = stack;
+	min_i = tmp->index;
+    while (tmp)
+    {
+        if (tmp->index < min_i)
+        {
+            min_i = tmp->index;
+            min_p = pos;
+        }
+        tmp = tmp->next;
+        pos++;
+    }
+    return min_p;
 }
 
-static void push_index(t_stack **stack_a, t_stack **stack_b, int i)
+static void push_index(t_stack **stack_a, t_stack **stack_b)
 {
 	int	pos;
 	int	size;
@@ -24,7 +33,7 @@ static void push_index(t_stack **stack_a, t_stack **stack_b, int i)
 	size = stack_size(*stack_a);
 	if (size == 4 || size == 5)
 	{
-		pos = get_index(stack_a, i);
+		pos = small_index(*stack_a);
 		if (pos == 1)
 			rotate(stack_a, 'a');
 		else if (pos == 2)
@@ -46,8 +55,8 @@ static void push_index(t_stack **stack_a, t_stack **stack_b, int i)
 
 void sort_4_5(t_stack **stack_a, t_stack **stack_b)
 {
-	push_index(stack_a, stack_b, 0);
-	push_index(stack_a, stack_b, 1);
+	push_index(stack_a, stack_b);
+	push_index(stack_a, stack_b);
 	sort_2_3(stack_a, 'a');
 	push(stack_b, stack_a, 'a');
 	if (stack_size(*stack_b) == 1)

@@ -1,18 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   extra.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/20 07:26:29 by zajaddou          #+#    #+#             */
+/*   Updated: 2025/03/20 07:27:01 by zajaddou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int    long_number64(int sign)
+static int	long_number64(int sign)
 {
 	if (sign == 1)
 		return (-1);
 	return (0);
 }
 
-int    extra_atoi(const char *str)
+int	extra_atoi(const char *str)
 {
-	int        i;
-	int        sign;
-	long    number;
+	int		i;
+	int		sign;
+	long	number;
 
 	i = 0;
 	number = 0;

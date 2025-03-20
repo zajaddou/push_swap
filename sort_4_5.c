@@ -25,7 +25,7 @@ static int small_index(t_stack *stack)
     return min_p;
 }
 
-static void push_index(t_stack **stack_a, t_stack **stack_b)
+static void push_small(t_stack **stack_a, t_stack **stack_b)
 {
 	int	pos;
 	int	size;
@@ -55,8 +55,8 @@ static void push_index(t_stack **stack_a, t_stack **stack_b)
 
 void sort_4_5(t_stack **stack_a, t_stack **stack_b)
 {
-	push_index(stack_a, stack_b);
-	push_index(stack_a, stack_b);
+	push_small(stack_a, stack_b);
+	push_small(stack_a, stack_b);
 	sort_2_3(stack_a);
 	push(stack_b, stack_a);
 	if (stack_size(*stack_b) == 1)

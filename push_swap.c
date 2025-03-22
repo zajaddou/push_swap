@@ -5,8 +5,9 @@ int	main(int ac, char *av[])
 {
 	t_stack *stack_a = NULL;
 	t_stack *stack_b = NULL;
+	int		size;
 
-	int size = 0;
+	size = 0;
 	parsing(ac, av, &size, &stack_a);
 
 	index_node(&stack_a);
@@ -23,3 +24,4 @@ int	main(int ac, char *av[])
 	print_node(stack_a);
 	print_node(stack_b);
 }
+

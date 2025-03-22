@@ -1,9 +1,6 @@
 
 #include "push_swap.h"
 
-// sa : swap a - swap the first 2 elements at the top of stack a.
-// pa : push a - take the first element at the top of b and put it at the top of a.
-
 void	swap(t_stack **stack)
 {
 	t_stack *first;

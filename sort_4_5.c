@@ -3,23 +3,23 @@
 
 static int small_index(t_stack *stack)
 {
-    t_stack *tmp;
+    t_stack *node;
     int		min_i;
 	int		min_p;
     int		pos;
 
 	pos = 0;
 	min_p = 0;
-	tmp = stack;
-	min_i = tmp->index;
-    while (tmp)
+	node = stack;
+	min_i = node->index;
+    while (node)
     {
-        if (tmp->index < min_i)
+        if (node->index < min_i)
         {
-            min_i = tmp->index;
+            min_i = node->index;
             min_p = pos;
         }
-        tmp = tmp->next;
+        node = node->next;
         pos++;
     }
     return min_p;
@@ -59,6 +59,6 @@ void	sort_4_5(t_stack **stack_a, t_stack **stack_b)
 	push_small(stack_a, stack_b);
 	sort_2_3(stack_a);
 	push(stack_b, stack_a);
-	if (stack_size(*stack_b) == 1)
+	if (stack_size(*stack_b) != 0)
 		push(stack_b, stack_a);
 }

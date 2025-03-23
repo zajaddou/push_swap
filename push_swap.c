@@ -17,9 +17,9 @@ int	main(int ac, char *av[])
 	else if (size == 4 || size == 5)
 		sort_4_5(&stack_a, &stack_b);
 	else
-		big_sort(&stack_a, &stack_b);
+		big_sort(&stack_a, &stack_b, 16);
 
-	//print_node(stack_a);
-	//print_node(stack_b);
+	print_node(stack_a);
+	print_node(stack_b);
 }
 

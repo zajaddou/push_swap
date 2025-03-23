@@ -21,7 +21,7 @@ int	main(int ac, char *av[])
 	else if (size > 100)
 		big_sort(&stack_a, &stack_b, 42);
 
-	print_node(stack_a);
-	print_node(stack_b);
+	//print_node(stack_a);
+	//print_node(stack_b);
 }
 

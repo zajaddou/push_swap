@@ -36,6 +36,6 @@ push: fclean
 	clear
 
 test: all
-	clear && cd test && python3 tester.py
+	clear && cd tester && python3 tester.py
 
 re: fclean all LIBFT

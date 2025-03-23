@@ -38,4 +38,4 @@ push: fclean
 test: all
 	clear && cd tester && python3 tester.py
 
-re: fclean all LIBFT
+re: fclean all LIBFT test

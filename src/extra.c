@@ -6,13 +6,13 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 05:20:23 by zajaddou          #+#    #+#             */
-/*   Updated: 2025/03/24 05:21:07 by zajaddou         ###   ########.fr       */
+/*   Updated: 2025/03/24 06:40:34 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	long_result64(int sign)
+static int	more_atoi(int sign)
 {
 	if (sign == 1)
 		return (-1);
@@ -39,7 +39,7 @@ int	extra_atoi(const char *str)
 	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
 	{
 		if (result > (LONG_MAX - (str[i] - '0')) / 10)
-			return (long_result64(sign));
+			return (more_atoi(sign));
 		result = (result * 10) + (str[i] - '0');
 		if ((result * sign) > INT_MAX || (result * sign) < INT_MIN)
 			ft_exit("Out of range");

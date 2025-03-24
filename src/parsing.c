@@ -6,7 +6,7 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 05:23:46 by zajaddou          #+#    #+#             */
-/*   Updated: 2025/03/24 05:45:35 by zajaddou         ###   ########.fr       */
+/*   Updated: 2025/03/24 06:41:36 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static	char	*combine_args(int ac, char **av)
 	}
 	i = -1;
 	while (input[++i])
-		if ((input[i] >= 9 && input[i] <= 13 ))
+		if ((input[i] >= 9 && input[i] <= 13))
 			input[i] = ' ';
 	if (is_empty(input))
 		ft_exit("Empty String");

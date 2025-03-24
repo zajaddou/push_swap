@@ -6,7 +6,7 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 05:21:12 by zajaddou          #+#    #+#             */
-/*   Updated: 2025/03/24 05:47:30 by zajaddou         ###   ########.fr       */
+/*   Updated: 2025/03/24 06:43:03 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,15 @@ int	count_word(char const *s)
 			i++;
 	}
 	return (c_words);
+}
+
+void	putmove(char *str, char c)
+{
+	while (*str)
+	{
+		putchar(*str);
+		str++;
+	}
+	putchar(c);
+	putchar('\n');
 }

@@ -6,7 +6,7 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 05:21:24 by zajaddou          #+#    #+#             */
-/*   Updated: 2025/03/24 05:23:37 by zajaddou         ###   ########.fr       */
+/*   Updated: 2025/03/24 06:36:22 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	swap(t_stack **stack)
 
 	if (!stack || !(*stack) || !(*stack)->next)
 		return ;
-	printf("s%c\n", (*stack)->place);
+	putmove("s", (*stack)->place);
 	first = *stack;
 	second = first->next;
 	first->next = second->next;
@@ -38,7 +38,7 @@ void	push(t_stack **src, t_stack **dest)
 		to = 'b';
 	else
 		to = 'a';
-	printf("p%c\n", to);
+	putmove("p", to);
 	temp = *src;
 	*src = (*src)->next;
 	temp->next = *dest;
@@ -53,7 +53,7 @@ void	rotate(t_stack **stack)
 
 	if (!stack || !(*stack) || !(*stack)->next)
 		return ;
-	printf("r%c\n", (*stack)->place);
+	putmove("r", (*stack)->place);
 	first = *stack;
 	*stack = first->next;
 	last = *stack;
@@ -70,7 +70,7 @@ void	reverse_rotate(t_stack **stack)
 
 	if (!stack || !(*stack) || !(*stack)->next)
 		return ;
-	printf("rr%c\n", (*stack)->place);
+	putmove("rr", (*stack)->place);
 	second_last = *stack;
 	while (second_last->next->next)
 		second_last = second_last->next;

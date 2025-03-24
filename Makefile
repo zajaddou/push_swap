@@ -5,7 +5,7 @@ CC= cc
 
 CFLAG= -Wextra -Werror -Wall
 
-MDR= push_swap.c parsing.c node.c extra.c moves.c sort_2_3.c sort_4_5.c bigsort.c 
+MDR= push_swap.c src/parsing.c src/stack.c src/extra.c src/moves.c src/sort.c src/bigsort.c 
 
 OBJ_M= $(MDR:%.c=%.o)
 

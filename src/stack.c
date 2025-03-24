@@ -1,5 +1,5 @@
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	index_node(t_stack **stack_a)
 {
@@ -30,7 +30,7 @@ void	index_node(t_stack **stack_a)
 	}
 }
 
-void	print_node(t_stack *stack)
+void	print_stack(t_stack *stack)
 {
 	t_stack *temp = stack;
 

@@ -6,7 +6,7 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 05:34:35 by zajaddou          #+#    #+#             */
-/*   Updated: 2025/03/24 07:08:48 by zajaddou         ###   ########.fr       */
+/*   Updated: 2025/03/24 07:11:32 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <string.h>
 # include <limits.h>
 # include "LIBFT/libft.h"
 

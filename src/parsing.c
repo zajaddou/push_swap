@@ -6,7 +6,7 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 05:23:46 by zajaddou          #+#    #+#             */
-/*   Updated: 2025/03/24 06:47:46 by zajaddou         ###   ########.fr       */
+/*   Updated: 2025/03/24 07:12:33 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,27 @@ static	int	*create_list(int size, char *input)
 		free(split[i++]);
 	free(split);
 	return (list);
+}
+
+int	count_word(char const *s)
+{
+	int	c_words;
+	int	i;
+
+	i = 0;
+	c_words = 0;
+	while (s[i])
+	{
+		if (!((s[i] >= 9 && s[i] <= 13) || s[i] == ' '))
+		{
+			c_words++;
+			while (s[i] && !((s[i] >= 9 && s[i] <= 13) || s[i] == ' '))
+				i++;
+		}
+		else
+			i++;
+	}
+	return (c_words);
 }
 
 void	parsing(int ac, char **av, int *size, t_stack **stack_a)

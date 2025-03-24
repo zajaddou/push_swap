@@ -6,7 +6,7 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 05:34:35 by zajaddou          #+#    #+#             */
-/*   Updated: 2025/03/24 07:11:32 by zajaddou         ###   ########.fr       */
+/*   Updated: 2025/03/24 07:12:40 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	ft_exit(char *why);
 void	*ft_malloc(size_t size);
 
 void	putmove(char *str, char c);
-int		count_word(char const *s);
 
 int		extra_atoi(const char *str);
 void	parsing(int ac, char **av, int *size, t_stack **stack_a);

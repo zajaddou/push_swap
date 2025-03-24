@@ -6,7 +6,7 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 05:30:14 by zajaddou          #+#    #+#             */
-/*   Updated: 2025/03/24 05:33:07 by zajaddou         ###   ########.fr       */
+/*   Updated: 2025/03/24 05:51:59 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	print_stack(t_stack *stack)
 		printf("\n> %c <", stack->place);
 	while (stack)
 	{
-		printf("\n%d | %d ", stack->index, stack->data);
+		printf("\n%d", stack->index, stack->data);
 		stack = stack->next;
 	}
 	printf("\n");

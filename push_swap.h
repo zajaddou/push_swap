@@ -6,7 +6,7 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 05:34:35 by zajaddou          #+#    #+#             */
-/*   Updated: 2025/03/24 07:12:40 by zajaddou         ###   ########.fr       */
+/*   Updated: 2025/03/24 07:15:42 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	parsing(int ac, char **av, int *size, t_stack **stack_a);
 int		stack_size(t_stack *stack);
 void	add_node(t_stack **real, int data);
 void	index_node(t_stack **stack_a);
-void	print_stack(t_stack *stack_a);
 
 void	push(t_stack **src, t_stack **dest);
 void	swap(t_stack **stack);

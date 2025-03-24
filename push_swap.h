@@ -6,7 +6,7 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 05:34:35 by zajaddou          #+#    #+#             */
-/*   Updated: 2025/03/24 07:19:25 by zajaddou         ###   ########.fr       */
+/*   Updated: 2025/03/24 08:13:58 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <limits.h>
 # include "LIBFT/libft.h"
 
+
+
 typedef struct stack
 {
 	int				data;
@@ -25,6 +27,10 @@ typedef struct stack
 	char			place;
 	struct stack	*next;
 }	t_stack;
+
+#include <stdio.h>
+void	print_stack(t_stack *stack);
+
 
 int		is_empty(char *str);
 int		is_sorted(int *list, int size);

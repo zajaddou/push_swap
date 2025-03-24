@@ -6,7 +6,7 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 05:30:14 by zajaddou          #+#    #+#             */
-/*   Updated: 2025/03/24 07:01:43 by zajaddou         ###   ########.fr       */
+/*   Updated: 2025/03/24 08:13:25 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,18 @@ void	add_node(t_stack **real, int data)
 			temp = temp->next;
 		temp->next = new;
 	}
+}
+
+void	print_stack(t_stack *stack)
+{
+	t_stack *temp = stack;
+
+	if (temp)
+		printf("\n> %c <", stack->place);
+	while (temp)
+	{
+		printf("\n%d | %d ", temp->index , temp->data);
+		temp = temp->next;
+	}
+	printf("\n");
 }

@@ -5,7 +5,7 @@ CC= cc
 
 CFLAG= -Wextra -Werror -Wall
 
-MDR= push_swap.c src/parsing.c src/stack.c src/extra.c src/moves.c src/sort.c src/bigsort.c 
+MDR= push_swap.c src/parsing.c src/stack.c src/extra.c src/moves.c src/sort.c src/bigsort.c src/check.c src/more.c
 
 OBJ_M= $(MDR:%.c=%.o)
 
@@ -38,4 +38,5 @@ push: fclean
 test: all
 	clear && cd tester && python3 tester.py
 
-re: fclean all LIBFT test
+re: fclean all
+	clear

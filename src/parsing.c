@@ -1,24 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/24 05:23:46 by zajaddou          #+#    #+#             */
+/*   Updated: 2025/03/24 05:45:35 by zajaddou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static	int	is_empty(char *str)
-{
-	int	i;
-
-	i = -1;
-	while (str[++i])
-		if (!((str[i] >= 9 && str[i] <= 13 ) || str[i] == ' '))
-			return (0);
-	return (1);
-}
-
-static	int is_valid(char *str)
+static	int	is_valid(char *str)
 {
 	if (is_empty(str))
 		return (0);
 	while (*str)
 	{
-		if ((*str >= '0' && *str <= '9') || (*str >= 9 && *str <= 13 ) || *str == ' ')
+		if ((*str >= '0' && *str <= '9') || (*str >= 9 && *str <= 13) || (*str == ' '))
 		{
 			if (*str >= '0' && *str <= '9')
 			{
@@ -41,39 +41,18 @@ static	int is_valid(char *str)
 	return (1);
 }
 
-static	void check_args(char *av[])
+static	void	check_args(char *av[])
 {
 	while (*(++av))
 		if (!is_valid(*av))
 			ft_exit("Invalid Args");
 }
 
-static	int	count_word(char const *s)
-{
-	int	c_words;
-	int	i;
-
-	i = 0;
-	c_words = 0;
-	while (s[i])
-	{
-		if (!((s[i] >= 9 && s[i] <= 13 ) || s[i] == ' '))
-		{
-			c_words++;
-			while (s[i] && !((s[i] >= 9 && s[i] <= 13 ) || s[i] == ' '))
-				i++;
-		}
-		else
-			i++;
-	}
-	return (c_words);
-}
-
-static	char *combine_args(int ac, char **av)
+static	char	*combine_args(int ac, char **av)
 {
 	char	*input;
 	char	*temp;
-	int 	i;
+	int		i;
 
 	i = 0;
 	input = NULL;
@@ -82,7 +61,7 @@ static	char *combine_args(int ac, char **av)
 		temp = input;
 		input = ft_strjoin(input, av[i]);
 		free(temp);
-		if ((i+1) < ac)
+		if ((i + 1) < ac)
 		{
 			temp = input;
 			input = ft_strjoin(input, " ");
@@ -98,47 +77,14 @@ static	char *combine_args(int ac, char **av)
 	return (input);
 }
 
-static	int is_duplicate(int *list, int size)
-{
-    int		a;
-	int		b;
-
-    a = 0;
-    while (a < size)
-    {
-        b = a + 1;
-        while (b < size)
-        {
-            if (list[a] == list[b])
-                return (1);
-            b++;
-        }
-        a++;
-    }
-    return (0);
-}
-
-static	int is_sorted(int *list, int size)
-{
-    int a = 0;
-
-    while (a < (size - 1))
-    {
-        if (list[a] > list[a + 1])
-            return (0);
-        a++;
-    }
-    return (1);
-}
-
 static	int	*create_list(int size, char *input)
 {
 	int		*list;
 	char	**split;
-    int     i;
-    
-    i = 0;
-    split = ft_malloc(sizeof(char *) * (size + 1));
+	int		i;
+
+	i = 0;
+	split = ft_malloc(sizeof(char *) * (size + 1));
 	split = ft_split(input, ' ');
 	split[size] = NULL;
 	free(input);
@@ -146,11 +92,11 @@ static	int	*create_list(int size, char *input)
 	i = -1;
 	while (split[++i] != NULL)
 		list[i] = extra_atoi(split[i]);
-    i = 0;
+	i = 0;
 	while (split[i] != NULL)
 		free(split[i++]);
 	free(split);
-    return (list);
+	return (list);
 }
 
 void	parsing(int ac, char **av, int *size, t_stack **stack_a)
@@ -164,7 +110,7 @@ void	parsing(int ac, char **av, int *size, t_stack **stack_a)
 	check_args(av);
 	input = combine_args(ac, av);
 	*size = count_word(input);
-    list = create_list(*size, input);
+	list = create_list(*size, input);
 	if (is_duplicate(list, *size))
 		ft_exit("Duplicate input");
 	if (is_sorted(list, *size))

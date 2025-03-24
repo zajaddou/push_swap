@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   extra.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/24 05:20:23 by zajaddou          #+#    #+#             */
+/*   Updated: 2025/03/24 05:21:07 by zajaddou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swap.h"
 
@@ -8,7 +19,7 @@ static int	long_result64(int sign)
 	return (0);
 }
 
-int		extra_atoi(const char *str)
+int	extra_atoi(const char *str)
 {
 	int		i;
 	int		sign;
@@ -37,9 +48,9 @@ int		extra_atoi(const char *str)
 	return (result * sign);
 }
 
-void    *ft_malloc(size_t size)
+void	*ft_malloc(size_t size)
 {
-	void *ptr;
+	void	*ptr;
 
 	ptr = malloc(size);
 	if (!ptr)
@@ -48,11 +59,11 @@ void    *ft_malloc(size_t size)
 	return (ptr);
 }
 
-void    ft_free(void *ptr)
+void	ft_free(void *ptr)
 {
-	static  void *total[INT_MAX];
-	static  int in;
-	int         out;
+	static void	*total[INT_MAX];
+	static int	in;
+	int			out;
 
 	out = 0;
 	if (!ptr)
@@ -60,24 +71,4 @@ void    ft_free(void *ptr)
 			free(total[out++]);
 	else
 		total[++in] = ptr;
-}
-
-void	error(char *err)
-{
-	while (*err)
-	{
-		write(2, err, 1);
-		err++;
-	}
-}
-
-void    ft_exit(char *why)
-{
-	ft_free(NULL);
-	if (why)
-	{
-		error("\033[1;31mError\033[0m\n");
-		exit(1);
-	}
-	exit(0);
 }

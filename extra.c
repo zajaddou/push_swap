@@ -76,10 +76,7 @@ void    ft_exit(char *why)
 	ft_free(NULL);
 	if (why)
 	{
-		error("\033[1;31m");
-		error("Error");
-		//error(why);
-		error("\033[0m\n");
+		error("\033[1;31mError\033[0m\n");
 		exit(1);
 	}
 	exit(0);

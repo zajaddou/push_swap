@@ -13,7 +13,7 @@ void	big_sort(t_stack **stack_a, t_stack **stack_b, int range)
 			push(stack_a, stack_b);
 			i++;
 		}
-		else if ((*stack_a)->index <= i + range)
+		else if ((*stack_a)->index <= (i + range))
 		{
 			push(stack_a, stack_b);
 			rotate(stack_b);

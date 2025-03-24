@@ -6,7 +6,7 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 05:34:35 by zajaddou          #+#    #+#             */
-/*   Updated: 2025/03/24 07:15:42 by zajaddou         ###   ########.fr       */
+/*   Updated: 2025/03/24 07:19:25 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,9 @@ int		is_valid(char *str);
 void	ft_free(void *ptr);
 void	ft_exit(char *why);
 void	*ft_malloc(size_t size);
+int		extra_atoi(const char *str);
 
 void	putmove(char *str, char c);
-
-int		extra_atoi(const char *str);
 void	parsing(int ac, char **av, int *size, t_stack **stack_a);
 
 int		stack_size(t_stack *stack);

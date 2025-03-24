@@ -6,7 +6,7 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 05:33:20 by zajaddou          #+#    #+#             */
-/*   Updated: 2025/03/24 07:15:00 by zajaddou         ###   ########.fr       */
+/*   Updated: 2025/03/24 07:15:17 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	main(int ac, char *av[])
 	size = 0;
 	parsing(ac, av, &size, &stack_a);
 	index_node(&stack_a);
-	size = -100;
 	if (size == 2 || size == 3)
 		sort_2_3(&stack_a);
 	else if (size == 4 || size == 5)

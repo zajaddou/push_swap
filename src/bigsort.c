@@ -6,13 +6,13 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 05:20:14 by zajaddou          #+#    #+#             */
-/*   Updated: 2025/03/24 05:20:16 by zajaddou         ###   ########.fr       */
+/*   Updated: 2025/03/24 07:09:47 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	trap_detect(t_stack *stack)
+static	int	trap_detect(t_stack *stack)
 {
 	t_stack	*node;
 	int		count;
@@ -32,7 +32,7 @@ int	trap_detect(t_stack *stack)
 	return (0);
 }
 
-void	big_sort(t_stack **stack_a, t_stack **stack_b, int range)
+static	void first_sort(t_stack **stack_a, t_stack **stack_b, int range)
 {
 	int	i;
 
@@ -55,4 +55,9 @@ void	big_sort(t_stack **stack_a, t_stack **stack_b, int range)
 		else
 			rotate(stack_a);
 	}
+}
+
+void	big_sort(t_stack **stack_a, t_stack **stack_b, int range)
+{
+	first_sort(stack_a, stack_b, range);
 }

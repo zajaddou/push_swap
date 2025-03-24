@@ -6,14 +6,13 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 05:34:35 by zajaddou          #+#    #+#             */
-/*   Updated: 2025/03/24 06:34:51 by zajaddou         ###   ########.fr       */
+/*   Updated: 2025/03/24 07:08:48 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
@@ -31,6 +30,7 @@ typedef struct stack
 int		is_empty(char *str);
 int		is_sorted(int *list, int size);
 int		is_duplicate(int *list, int size);
+int		is_valid(char *str);
 
 void	ft_free(void *ptr);
 void	ft_exit(char *why);

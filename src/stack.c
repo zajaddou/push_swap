@@ -6,7 +6,7 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 05:30:14 by zajaddou          #+#    #+#             */
-/*   Updated: 2025/03/24 06:03:45 by zajaddou         ###   ########.fr       */
+/*   Updated: 2025/03/24 07:01:43 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,25 +38,6 @@ void	index_node(t_stack **stack_a)
 			break ;
 		min->index = i++;
 	}
-}
-
-void	print_stack(t_stack *stack)
-{
-	int	i;
-
-	i = -1;
-	if (stack)
-		printf("\n> %c <", stack->place);
-	while (stack)
-	{
-		i = -1;
-		printf("\n%d ] ", stack->index);
-		while (++i < stack->index / 2.5)
-			printf("_");
-		printf("\n");
-		stack = stack->next;
-	}
-	printf("\n");
 }
 
 int	stack_size(t_stack *stack)

@@ -6,7 +6,7 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 05:47:01 by zajaddou          #+#    #+#             */
-/*   Updated: 2025/03/24 05:47:11 by zajaddou         ###   ########.fr       */
+/*   Updated: 2025/03/24 06:46:39 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,34 @@ int	is_empty(char *str)
 	while (str[++i])
 		if (!((str[i] >= 9 && str[i] <= 13) || (str[i] == ' ' )))
 			return (0);
+	return (1);
+}
+
+int	is_valid(char *str)
+{
+	if (is_empty(str))
+		return (0);
+	while (*str)
+	{
+		if ((*str >= '0' && *str <= '9') || (*str >= 9 && *str <= 13) || (*str == ' '))
+		{
+			if (*str >= '0' && *str <= '9')
+			{
+				str++;
+				if ((*str == '-' || *str == '+'))
+					return (0);
+			}
+			else
+				str++;
+		}
+		else if (*str == '-' || *str == '+')
+		{
+			str++;
+			if (!(*str >= '0' && *str <= '9'))
+				return (0);
+		}
+		else
+			return (0);
+	}
 	return (1);
 }

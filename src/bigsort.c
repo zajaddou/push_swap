@@ -6,7 +6,7 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 05:20:14 by zajaddou          #+#    #+#             */
-/*   Updated: 2025/03/24 08:26:08 by zajaddou         ###   ########.fr       */
+/*   Updated: 2025/03/25 03:35:43 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,12 @@ void	sort_b(t_stack **stack_a, t_stack **stack_b)
 	t_stack	*node;
 	int		size;
 	int		deep;
-		
-	node = *stack_b;
 
-	size = stack_size(*stack_b)-1;
-	
+	node = *stack_b;
+	size = stack_size(*stack_b) - 1;
 	while (stack_size(*stack_b) > 0)
 	{
- 		deep = max_place(*stack_b);
+		deep = max_place(*stack_b);
 		if (deep == 0)
 		{
 			push(stack_b, stack_a);
@@ -95,8 +93,8 @@ void	sort_b(t_stack **stack_a, t_stack **stack_b)
 void	big_sort(t_stack **stack_a, t_stack **stack_b, int range)
 {
 	int	i;
-	i = 0;
 
+	i = 0;
 	while (*stack_a)
 	{
 		if ((*stack_a)->index <= i)

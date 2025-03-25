@@ -6,18 +6,14 @@
 /*   By: zajaddou <zajaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 05:33:20 by zajaddou          #+#    #+#             */
-/*   Updated: 2025/03/25 01:34:41 by zajaddou         ###   ########.fr       */
+/*   Updated: 2025/03/25 02:40:30 by zajaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-void test()
-{
-	system("leaks push_swap");
-}
+
 int	main(int ac, char *av[])
-{
-	// atexit(test);		
+{	
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	int		size;
